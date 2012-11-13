@@ -192,6 +192,7 @@ td {
 .wrapper {
   width: 960px;
   margin: 0 auto;
+  position: relative;
 }
 
 /* Header */
@@ -202,7 +203,7 @@ header {
 	background-color: #2e2d29;
 	color: #fefefe;
   width: 100%;
-	padding: 18px 0 10px;
+	padding: 18px 0 18px;
   -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.4);
 }
@@ -302,27 +303,22 @@ h1.title {
 
 header nav {
   width: 700px;
-  float: left;
   margin-top: 10px;
+  position: absolute;
+  right: 0;
 }
 
 header nav>ul {
-  width: 450px;
+  width: 470px;
   float: left;
   text-align: right;
   margin-right: 50px;
 }
 
 header input {
-  width: 150px;
+  width: 180px;
   float: left;
-}
-
-header input {
   vertical-align: middle;
-}
-
-header input {
   padding: 5px 5px 5px 25px;
   font-family: Cantarell, Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -391,9 +387,15 @@ header nav>ul>li:first-child {
 }
 
 .posts time {
-  top: 10px;
+  top: 9px;
   position: absolute;
   font-family: 'Arvo', Helvetica, Arial, sans-serif;
+}
+
+.posts time>span {
+  width: 45px;
+  text-align: center;
+  display: block;
 }
 
 .day {
@@ -413,6 +415,7 @@ header nav>ul>li:first-child {
 .year {
   font-size: 16px;
   display: block;
+  letter-spacing: 1px;
 }
 
 ul.tags[class^="icon-"] {

@@ -16,6 +16,10 @@ comments : false
         </time>
         <div class="article">
           <h1><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
+
+          {% if post.image %}
+          <img src="post.image" class="featured-image">
+          {% endif %}
           
           {% if post.description %}
           <p>{{ post.description }}</p>
