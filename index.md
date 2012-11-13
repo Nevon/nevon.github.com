@@ -1,46 +1,43 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+comments : false
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
-
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
-
-## Update Author Attributes
-
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
-
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
-
 <ul class="posts">
+
   {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+    <li>
+      <article>
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}" title="{{ post.date }}">
+          <span class="day">{{ post.date | date: "%d" }}</span>
+          <span class="month">{{ post.date | date: "%b" }}</span>
+          <span class="year">{{ post.date | date: "%Y" }}</span>
+        </time>
+        <div class="article">
+          <h1><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h1>
+          
+          {% if post.description %}
+          <p>{{ post.description }}</p>
+          {% endif %}
+
+          {% unless post.tags == empty %}
+            <ul class="icon-tags tags">
+            {% assign tags_list = post.tags %}  
+            {% if tags_list.first[0] == null %}
+              {% for tag in tags_list %} 
+                <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }}</a></li>
+              {% endfor %}
+            {% else %}
+              {% for tag in tags_list %} 
+                <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }}</a></li>
+              {% endfor %}
+            {% endif %}
+            </ul>
+          {% endunless %}
+        </div>
+      </article>
+    </li>
   {% endfor %}
+
 </ul>
-
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
-
