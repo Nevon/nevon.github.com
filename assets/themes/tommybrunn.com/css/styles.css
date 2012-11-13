@@ -442,6 +442,48 @@ ul.tags[class^="icon-"] {
   padding: 0 5px;
 }
 
+/* Swiftype */
+.swiftype-widget .autocomplete {
+  width: 180px !important;
+  margin-left: 8px !important;
+  margin-top: -4px !important;
+  font-family: Cantarell, Helvetica, Arial, sans-serif !important;
+  -webkit-border-radius: 0 0 3px 3px !important;
+  border-radius: 0 0 3px 3px !important;
+}
+
+.swiftype-widget .autocomplete li {
+  background: #fff;
+  color: #232323;
+}
+
+.swiftype-widget .autocomplete li:first-child {
+  -webkit-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+
+.swiftype-widget .autocomplete li p.title {
+  color: #9d1c1c !important;
+}
+
+.swiftype-widget .autocomplete li.active .sections em {
+  color: #f0f0f0 !important;
+}
+
+.swiftype-widget .autocomplete li.active {
+  border-top: 1px solid #e5e5e5 !important;
+  border-bottom: 1px solid #fff !important;
+  background: #2E2D29 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  color: #fff !important;
+
+}
+
+.swiftype-widget .autocomplete li.active .sections {
+  color: #fff !important;
+}
+
 @media print, screen and (max-width: 960px) {
   
 }
