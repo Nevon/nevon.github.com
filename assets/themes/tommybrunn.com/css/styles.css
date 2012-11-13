@@ -135,8 +135,7 @@ hr {
 
 img {
   position: relative;
-  margin: 0 auto;
-  max-width: 650px;
+  max-width: 628px;
   padding: 5px;
   margin: 10px 0 32px 0;
   border: 1px solid #ccc;
@@ -354,7 +353,7 @@ header nav>ul>li:first-child {
 
 .content {
   max-width: 720px;
-  padding: 50px 40px 60px;
+  padding: 40px 40px 50px;
   margin: 0 auto;
   background: #f8f8f5;
   border: 1px solid #cfcfcf;
@@ -386,6 +385,10 @@ header nav>ul>li:first-child {
   margin-left: 80px;
 }
 
+.posts p {
+  margin-bottom: 0;
+}
+
 .posts time {
   top: 9px;
   position: absolute;
@@ -396,6 +399,14 @@ header nav>ul>li:first-child {
   width: 45px;
   text-align: center;
   display: block;
+}
+
+.featured-image {
+  display: block;
+  position: absolute;
+  top: 80px;
+  max-width: 40px;
+  padding: 1px;
 }
 
 .day {
