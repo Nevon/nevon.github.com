@@ -2,7 +2,7 @@
 layout: post
 category : lessons
 tags : [intro, beginner, jekyll, tutorial]
-publish : false
+published : false
 description : This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
 ---
 {% include JB/setup %}
