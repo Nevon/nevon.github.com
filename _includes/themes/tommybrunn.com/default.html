@@ -93,8 +93,9 @@
         var popup = $('.author>.info');
 
         $(this).mouseup(function(e) {
+          console.log(e);
           //Show or hide the dropdown if we click on the logo
-          if ($(e.target).is("h1.title")) {
+          if ($(e.target).is("h1.title, .author")) {
             popup.toggleClass('show');
             return
           }
