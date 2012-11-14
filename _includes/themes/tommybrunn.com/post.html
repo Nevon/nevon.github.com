@@ -2,17 +2,19 @@
 
   {{ content }}
 
+  {% unless page.tags == empty %}
     <ul class="tags icon-tags">
   	{% assign tags_list = page.tags %}  
-            {% if tags_list.first[0] == null %}
-              {% for tag in tags_list %} 
-                <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }}</a></li>
-              {% endfor %}
-            {% else %}
-              {% for tag in tags_list %} 
-                <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }}</a></li>
-              {% endfor %}
-            {% endif %}
-  </ul>
+    {% if tags_list.first[0] == null %}
+      {% for tag in tags_list %} 
+        <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }}</a></li>
+      {% endfor %}
+    {% else %}
+      {% for tag in tags_list %} 
+        <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }}</a></li>
+      {% endfor %}
+    {% endif %}
+    </ul>
+  {% endunless %}
 
   {% include JB/comments %}
